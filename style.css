@@ -694,3 +694,1004 @@ body.canvas_active .off_canvas_overlay {
         text-align: center; /* Center align on mobile */
     }
 }
+
+/* --- SIGN UP PAGE STYLES --- */
+
+/* 1. The Background Logic */
+.signup-page {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden; /* Prevent scrolling */
+    position: relative;
+    font-family: 'Inter', sans-serif;
+}
+
+/* The element that holds the image and gets blurred */
+.signup-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Replace with your actual image path */
+    background-image: url('assets/images/Image 3.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* The Blur Effect */
+    filter: blur(8px); 
+    transform: scale(1.1); /* Scaling up slightly removes white edges caused by blur */
+    z-index: -1; /* Puts it behind everything */
+}
+
+/* 2. The Centering Wrapper */
+.signup-wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay to make text pop */
+}
+
+/* 3. The Form Card */
+.signup-card {
+    background-color: rgba(255, 255, 255, 0.95); /* White, slightly transparent */
+    width: 100%;
+    max-width: 400px;
+    padding: 40px 30px;
+    
+    /* Rounded Corners Request */
+    border-radius: 20px; 
+    
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.form-header h2 {
+    font-family: 'Cinzel Decorative', cursive;
+    color: #1f2937;
+    margin-bottom: 5px;
+    font-size: 2rem;
+}
+
+.form-header p {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+}
+
+/* Input Fields */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #00d79a; /* Brand color */
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px 12px 45px; /* Padding left creates space for the icon */
+    border: 1px solid #ddd;
+    border-radius: 50px; /* Rounded inputs */
+    outline: none;
+    font-size: 1rem;
+    background: #f9f9f9;
+    transition: border-color 0.3s;
+    box-sizing: border-box; /* Fixes width issues */
+}
+
+.input-group input:focus {
+    border-color: #00d79a;
+    background: #fff;
+}
+
+/* Submit Button */
+.signup-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #00d79a;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 10px;
+}
+
+.signup-btn:hover {
+    background-color: #00bf88;
+    transform: translateY(-2px);
+}
+
+/* Links */
+.form-footer {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.form-footer a {
+    color: #00d79a;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+/* --- LISTING PAGE HERO --- */
+.listing-hero {
+    width: 100%;
+    height: 400px; /* Large Hero Area */
+    background-image: url('assets/images/Image 4.jpg'); /* Adjust path */
+    background-size: cover;
+    background-position: center 30%; /* Focus on specific part of image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+/* Dark overlay for text readability */
+.listing-hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 3.5rem;
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    letter-spacing: 2px;
+}
+
+/* --- CATALOG GRID (Dior Style) --- */
+.catalog-section {
+    padding: 0 40px 80px 40px; /* Wide padding for luxury feel */
+}
+
+.catalog-grid {
+    display: grid;
+    /* 4 columns on desktop, responsive */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 40px; /* Generous gap between products */
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.catalog-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #fff;
+    padding-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.catalog-card:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Subtle float effect */
+}
+
+/* Image styling */
+.cat-image-box {
+    width: 100%;
+    aspect-ratio: 1 / 1.1; /* Slightly taller than square, very elegant */
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 15px;
+    background-color: #f7f7f7; /* Light grey bg for images like reference */
+}
+
+.cat-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    mix-blend-mode: multiply; /* Helps image blend with grey bg if it has white bg */
+    transition: transform 0.6s ease;
+}
+
+.catalog-card:hover .cat-image-box img {
+    transform: scale(1.08); /* Slow zoom on hover */
+}
+
+/* Mood Tags (Top Left of image) */
+.mood-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    background: rgba(255,255,255,0.9);
+    color: #333;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 2px;
+}
+
+/* Mood specific colors (optional borders) */
+.mood-tag.happy { border-left: 3px solid #fcd34d; }
+.mood-tag.bold { border-left: 3px solid #1f2937; }
+.mood-tag.romantic { border-left: 3px solid #f43f5e; }
+.mood-tag.energetic { border-left: 3px solid #00d79a; }
+
+/* Product Text Details */
+.cat-details h3 {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 1.1rem;
+    margin: 10px 0 5px 0;
+    color: #1f2937;
+    font-weight: 700;
+}
+
+.cat-price {
+    font-family: 'Inter', sans-serif;
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+/* Stock Status */
+.stock-status {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.in-stock { color: #16a34a; } /* Green */
+.out-stock { color: #dc2626; } /* Red */
+
+/* Add to Cart Button */
+.add-to-cart-btn {
+    background-color: #1f2937; /* Dark Grey/Black */
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 80%; /* Button doesn't span full width */
+}
+
+.add-to-cart-btn:hover {
+    background-color: #00d79a; /* Brand Color on Hover */
+}
+
+.add-to-cart-btn.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width: 1024px) {
+    .catalog-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .catalog-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .hero-content h2 { font-size: 2.2rem; }
+    .catalog-section { padding: 0 15px 60px 15px; }
+}
+
+@media (max-width: 480px) {
+    .catalog-grid { grid-template-columns: 1fr; } /* 1 column on phones */
+}
+
+/* --- PRODUCT DETAIL PAGE STYLES --- */
+
+.product-detail-section {
+    padding: 60px 0;
+    background-color: #ffffff;
+}
+
+.product-detail-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: center; /* Aligns image and text vertically */
+}
+
+/* 1. Left Column: Image */
+.product-image-col {
+    flex: 1;
+    min-width: 300px;
+}
+
+.main-image-frame {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #f7f7f7;
+    border: 1px solid #eee;
+    padding: 20px; /* Internal padding like a frame */
+}
+
+.main-image-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.main-image-frame:hover img {
+    transform: scale(1.05);
+}
+
+/* 2. Right Column: Info */
+.product-info-col {
+    flex: 1;
+    min-width: 300px;
+}
+
+.breadcrumb {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.breadcrumb a {
+    color: #888;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+    color: #00d79a;
+}
+
+.product-title {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 2.5rem;
+    color: #1f2937;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.8rem;
+    color: #00d79a;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Rating Stars */
+.product-rating-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.stars {
+    color: #d1d5db; /* Gray default */
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.stars i.active {
+    color: #fcd34d; /* Gold */
+    font-weight: 900; /* Solid star */
+}
+
+.rating-text {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* Description & Meta */
+.product-description {
+    font-size: 1rem;
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.product-meta {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.product-meta li {
+    margin-bottom: 8px;
+}
+
+/* 3. Actions (Qty + Button) */
+.product-actions {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.quantity-selector {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.qty-btn {
+    background: #f3f4f6;
+    border: none;
+    padding: 0 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.qty-btn:hover { background: #e5e7eb; }
+
+.qty-input {
+    width: 50px;
+    text-align: center;
+    border: none;
+    font-weight: 600;
+    outline: none;
+}
+
+.add-to-cart-btn-large {
+    background-color: #1f2937;
+    color: white;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart-btn-large:hover {
+    background-color: #00d79a;
+}
+
+/* Shipping Info */
+.shipping-info p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .product-detail-wrapper {
+        flex-direction: column;
+    }
+    .product-title {
+        font-size: 2rem;
+    }
+}
+
+/* --- CART PAGE STYLES --- */
+.cart-section {
+    padding: 60px 0;
+    min-height: 80vh;
+    background-color: #ffffff;
+}
+
+.cart-heading {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #000;
+}
+
+/* Table Layout using Flexbox for alignment */
+.cart-header-row {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Cinzel Decorative', cursive;
+    font-weight: 700;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 30px;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.cart-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Vertically center */
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* Columns */
+.col-product { width: 45%; }
+.col-price { width: 15%; color: #555; font-family: 'Inter', sans-serif; }
+.col-qty { width: 20%; display: flex; justify-content: center; }
+.col-total { width: 20%; text-align: right; font-family: 'Inter', sans-serif; color: #555; }
+
+/* Product Info specific */
+.product-info {
+    display: flex;
+    gap: 20px;
+}
+
+.product-info img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.p-details h3 {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 1.1rem;
+    margin: 0 0 5px 0;
+    color: #000;
+    font-weight: 700;
+}
+
+.p-details .sku {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: #000;
+}
+
+.p-details p {
+    margin: 0;
+    font-size: 0.75rem;
+    color: #666;
+    text-transform: uppercase;
+    line-height: 1.4;
+}
+
+/* Qty Controls */
+.qty-control {
+    display: flex;
+    align-items: center;
+}
+
+.qty-control button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0 10px;
+    color: #333;
+}
+
+.qty-control input {
+    width: 30px;
+    text-align: center;
+    border: none;
+    background: #e0e0e0;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    padding: 2px 0;
+}
+
+/* Total & Checkout Section */
+.cart-footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align to right */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.grand-total-box {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 1.5rem;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.grand-total-box .label {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.grand-total-box .value {
+    font-weight: 700;
+    font-family: 'Cinzel Decorative', cursive;
+}
+
+/* Gradient Button */
+.checkout-btn {
+    background: linear-gradient(to right, #93e4d6, #168f86); /* Reference Image Gradient */
+    color: white;
+    border: none;
+    padding: 15px 60px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-family: 'Cinzel Decorative', cursive;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    letter-spacing: 1px;
+}
+
+.checkout-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(22, 143, 134, 0.4);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .cart-header-row { display: none; } /* Hide headers on mobile */
+    .cart-item-row { flex-direction: column; align-items: flex-start; gap: 15px; }
+    .col-product, .col-price, .col-qty, .col-total { width: 100%; text-align: left; }
+    .col-qty { justify-content: flex-start; }
+    .col-total { text-align: left; font-weight: 700; color: #00d79a; }
+}
+
+/* --- CHECKOUT PAGE STYLES --- */
+
+.checkout-section {
+    padding: 40px 0 80px 0;
+    background-color: #f9fafb; /* Light grey background like reference */
+}
+
+/* Steps Indicator */
+.checkout-steps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: #9ca3af;
+}
+
+.checkout-steps .step.active {
+    color: #00d79a; /* Brand Color */
+    font-weight: 700;
+}
+
+.checkout-steps .step.completed {
+    color: #1f2937;
+}
+
+.checkout-steps .separator {
+    width: 50px;
+    height: 2px;
+    background-color: #e5e7eb;
+    margin: 0 15px;
+}
+
+/* Layout Grid */
+.checkout-layout {
+    display: flex;
+    gap: 40px;
+}
+
+/* Left Column: Form */
+.checkout-form-col {
+    flex: 2; /* Takes up 2/3 space */
+}
+
+.section-title {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: #1f2937;
+}
+
+.checkout-form-col form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color: #4b5563;
+    font-size: 0.9rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px; /* Rounded corners like reference */
+    font-size: 1rem;
+    outline: none;
+    background-color: #fff;
+    transition: border 0.2s;
+}
+
+.form-group input:focus {
+    border-color: #00d79a;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group.half {
+    flex: 1;
+}
+
+/* Right Column: Summary & Payment */
+.checkout-summary-col {
+    flex: 1; /* Takes up 1/3 space */
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.summary-card, .payment-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border: 1px solid #f3f4f6;
+}
+
+.card-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #1f2937;
+}
+
+/* Summary Item */
+.summary-item {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f3f4f6;
+    background-color: #f9fafb;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.summary-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.s-info h4 {
+    font-size: 0.95rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+.s-info p {
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin: 2px 0 0 0;
+}
+
+/* Price Breakdown */
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    color: #4b5563;
+    margin-bottom: 10px;
+}
+
+.price-row.total {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #e5e7eb;
+    font-weight: 700;
+    color: #1f2937;
+    font-size: 1.1rem;
+}
+
+/* Payment Options */
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: #f9fafb;
+}
+
+.payment-option:hover {
+    border-color: #00d79a;
+}
+
+/* Hide default radio, style custom one */
+.payment-option input {
+    display: none;
+}
+
+.payment-option i {
+    margin: 0 10px;
+    font-size: 1.1rem;
+    color: #4b5563;
+}
+
+/* Active State Styling via JS or CSS has-checked logic */
+.payment-option input:checked + .custom-radio + i {
+    color: #00d79a;
+}
+.payment-option input:checked ~ {
+    font-weight: 600;
+}
+
+.place-order-btn {
+    width: 100%;
+    background: linear-gradient(to right, #93e4d6, #168f86); /* Brand Gradient */
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.place-order-btn:hover {
+    opacity: 0.9;
+}
+
+.terms-text {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    text-align: center;
+    margin-top: 15px;
+    line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .checkout-layout {
+        flex-direction: column;
+    }
+    .checkout-form-col {
+        order: 2;
+    }
+    .checkout-summary-col {
+        order: 1; /* Show summary first on mobile usually, or keep 2/1 */
+    }
+}
+
+/* --- ABOUT US PAGE STYLES --- */
+
+.about-hero-section {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Clips the blurred edges so they look clean */
+}
+
+/* 1. The Background Image Layer */
+.about-hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    
+    /* Image Settings */
+    background-image: url('assets/images/Image 1.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* BLUR SETTINGS */
+    filter: blur(5px);      /* Adjust this number (e.g., 3px or 8px) to change blur intensity */
+    transform: scale(1.1);  /* Zoom in slightly to hide the white edges caused by blurring */
+    z-index: 0;             /* Sits at the bottom */
+}
+
+/* 2. The Dark Overlay (Optional, makes text pop more) */
+.about-hero-section .overlay {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* Low opacity black */
+    z-index: 1; /* Sits on top of the image */
+}
+
+/* 3. The Text Content */
+.about-hero-section .hero-text {
+    position: relative;
+    z-index: 2; /* Sits on top of everything */
+    text-align: center;
+    padding: 20px;
+}
+
+.about-hero-section h1 {
+    font-family: 'Cinzel Decorative', cursive;
+    color: #ffffff;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    margin: 0;
+}
+
+.about-content-section {
+    background-color: #dbeceb; 
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.about-heading {
+    /* ENSURE THIS IS SET TO CINZEL */
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 2.5rem;
+    color: #1f2937;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.about-text-wrapper {
+    max-width: 900px; 
+    margin: 0 auto;
+}
+
+.about-text-wrapper p {
+    /* CHANGED FROM 'Inter' TO 'Cinzel Decorative' */
+    font-family: 'Poppins', cursive; 
+    
+    font-size: 1.1rem; /* Increased slightly for readability */
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 25px;
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    font-weight: 700; }
