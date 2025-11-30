@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Scent Aura</title>
+
+    <!-- Bootstrap & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR (Same as previous) -->
+    <nav class="header_bottom">
+        <div class="main_menu_nav">
+            <div class="site_branding">
+                <h1><a href="index.html">Scent Aura</a></h1>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="listing.html">Shop</a></li>
+                <li class="has-dropdown">
+                    <a href="#">Mood-based Categories <i class="fa-solid fa-angle-down text-xs ml-1"></i></a>
+                    <ul class="sub_menu">
+                        <li><a href="#">Happy</a></li>
+                        <li><a href="#">Relaxed</a></li>
+                        <li><a href="#">Trending</a></li>
+                    </ul>
+                </li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <ul class="nav-icons-container">
+                <li class="search-toggle"><a href="javascript:void(0)" id="search-icon"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                <li class="user-profile"><a href="signup.html"><i class="fa-solid fa-user"></i></a></li>
+                <li class="cart-icon">
+                    <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i> <span id="cart-count" class="badge">2</span></a>
+                </li>
+            </ul>
+        </div>
+        <div class="search-bar-container" id="search-bar">
+            <div class="search-form-wrapper">
+                <form onsubmit="return false;">
+                    <input type="text" placeholder="Search..." aria-label="Search">
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CHECKOUT CONTENT -->
+    <section class="checkout-section">
+        <div class="container">
+            
+            <!-- Progress Steps -->
+            <div class="checkout-steps">
+                <span class="step completed">Cart</span>
+                <span class="separator"></span>
+                <span class="step active">Checkout</span>
+                <span class="separator"></span>
+                <span class="step">Confirmation</span>
+            </div>
+
+            <div class="checkout-layout">
+                
+                <!-- LEFT COLUMN: Billing Form -->
+                <div class="checkout-form-col">
+                    <h2 class="section-title">Billing & Shipping Information</h2>
+                    
+                    <form id="checkoutForm">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" placeholder="example@email.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" placeholder="+92 345 567 890" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Shipping Address</label>
+                            <input type="text" placeholder="123 Random Street, Faisalabad" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>City</label>
+                            <input type="text" placeholder="Faisalabad" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label>ZIP / Postal Code</label>
+                                <input type="text" placeholder="38000" required>
+                            </div>
+                            <div class="form-group half">
+                                <label>Country</label>
+                                <input type="text" placeholder="Pakistan" value="Pakistan" readonly>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- RIGHT COLUMN: Summary & Payment -->
+                <div class="checkout-summary-col">
+                    
+                    <!-- Order Summary Card -->
+                    <div class="summary-card">
+                        <h3 class="card-title">Order Summary</h3>
+                        
+                        <!-- Mini Item Preview -->
+                        <div class="summary-item">
+                            <img src="assets/images/Image 4.jpg" alt="Perfume">
+                            <div class="s-info">
+                                <h4>Gingembre - Latte</h4>
+                                <p>Personalized Scent</p>
+                            </div>
+                        </div>
+
+                        <div class="price-breakdown">
+                            <div class="price-row">
+                                <span>Subtotal</span>
+                                <span>Rs. 27,000</span>
+                            </div>
+                            <div class="price-row">
+                                <span>Shipping</span>
+                                <span>Rs. 500</span>
+                            </div>
+                            <div class="price-row total">
+                                <span>Total</span>
+                                <span>Rs. 27,500</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Method Card -->
+                    <div class="payment-card">
+                        <h3 class="card-title">Select Payment Method</h3>
+                        
+                        <div class="payment-options">
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="card" checked>
+                                <span class="custom-radio"></span>
+                                <i class="fa-regular fa-credit-card"></i> Credit/Debit card
+                            </label>
+                            
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="cod">
+                                <span class="custom-radio"></span>
+                                <i class="fa-solid fa-truck"></i> Cash on Delivery
+                            </label>
+                            
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="bank">
+                                <span class="custom-radio"></span>
+                                <i class="fa-solid fa-building-columns"></i> Bank Transfer
+                            </label>
+                        </div>
+
+                        <button class="place-order-btn" id="placeOrderBtn">Place Order</button>
+                        
+                        <p class="terms-text">
+                            By placing your order, you agree to ScentAura's Terms and Conditions.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (Same as previous) -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="listing.html">Shop</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col contact-col">
+                <h3 class="footer-heading">Contact</h3>
+                <address>
+                    <p class="address-text">Ketchery Bazar, Faisalabad</p>
+                </address>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2025 ScentAura.</p></div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="menu_toggle.js"></script>
+    <script src="checkout.js"></script>
+</body>
+</html>
