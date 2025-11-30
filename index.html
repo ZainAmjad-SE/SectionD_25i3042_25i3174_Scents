@@ -6,211 +6,321 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scent Aura</title>
 
+    <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <!-- FIXED: Correct Font Awesome 6 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=DM+Serif+Text:ital@0;1&family=Gabarito:wght@400..900&family=Markazi+Text:wght@400..700&family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Poppins&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
-    <div class="off_canvas_overlay"></div>
-    <div class="canvas_open">
-        <a href="javascript::void(0)"><i class="fa fa-bars"></i></a>
+
+    <!-- HEADER / NAVIGATION -->
+    <nav class="header_bottom">
+        <div class="main_menu_nav">
+            <div class="site_branding">
+                <h1><a href="#">Scent Aura</a></h1>
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+
+                <!-- MOOD-BASED CATEGORIES DROPDOWN -->
+                <li class="has-dropdown">
+                    <a href="#">Mood-based Categories <i class="fa-solid fa-angle-down text-xs ml-1"></i></a>
+                    <ul class="sub_menu">
+                        <li><a href="#">Happy</a></li>
+                        <li><a href="#">Bold</a></li>
+                        <li><a href="#">Energetic</a></li>
+                        <li><a href="#">Romantic</a></li>
+                        <li><a href="#">Trending</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+
+            <!-- Utility Icons Group -->
+            <ul class="nav-icons-container">
+                <!-- Search Icon -->
+                <li class="search-toggle">
+                    <a href="javascript:void(0)" id="search-icon"><i class="fa-solid fa-magnifying-glass"></i></a>
+                </li>
+                <!-- User Profile Icon -->
+                <li class="user-profile">
+                    <a href="signup.html"><i class="fa-solid fa-user"></i></a>
+                </li>
+                <!-- Cart Icon -->
+                <li class="cart-icon">
+                    <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Search Bar Container (Hidden by default) -->
+        <div class="search-bar-container" id="search-bar">
+            <div class="search-form-wrapper">
+                <form onsubmit="return false;">
+                    <input type="text" placeholder="Search our exclusive scents..." aria-label="Search">
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- IMAGE SLIDER -->
+    <div class="image-slider" id="image-slider">
+        <!-- Slide 1 -->
+        <div class="slide active">
+            <!-- Ensure image paths are correct on your computer -->
+            <img src="assets/images/Image 1.jpg" alt="Perfume 1">
+            <div class="slide-content">
+                <p class="slide-text">Elegance in Every Drop</p>
+                <a href="listing.html" class="shop-now-button">Shop Now</a>
+            </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="slide">
+            <img src="assets/images/Image 2.jpg" alt="Perfume 2">
+            <div class="slide-content">
+                <p class="slide-text">Mysterious & Alluring</p>
+                <a href="listing.html" class="shop-now-button">Shop Now</a>
+            </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="slide">
+            <img src="assets/images/Image 3.jpg" alt="Perfume 3">
+            <div class="slide-content">
+                <p class="slide-text">A Touch of Modern Glamour</p>
+                <a href="listing.html" class="shop-now-button">Shop Now</a>
+            </div>
+        </div>
+        <!-- Slide 4 -->
+        <div class="slide">
+            <img src="assets/images/Image 4.jpg" alt="Perfume 4">
+            <div class="slide-content">
+                <p class="slide-text">Freshness That Inspires</p>
+                <a href="listing.html" class="shop-now-button">Shop Now</a>
+            </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <button class="slider-arrow arrow-left" id="prevSlide"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="slider-arrow arrow-right" id="nextSlide"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="p-8 container">
+            
+        </p>
+        <div class="mt-5 h-96 bg-white p-6 rounded-lg shadow-md flex items-center justify-center">
+            <p class="text-gray-400"></p>
+        </div>
+    </div>
+
+    <!-- FEATURED PRODUCTS SECTION -->
+    <section class="featured-section">
+        <div class="container">
+            <h2 class="featured-heading">Featured Products</h2>
+            
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="image-box">
+                        <img src="assets/images/f01.jpg" alt="Perfume 1">
+                        <!-- Overlay for 'Add to Cart' (Optional style) -->
+                        <div class="overlay">
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+                    <h3>Midnight Bloom</h3>
+                    <p class="price">Rs. 7,500</p>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="image-box">
+                        <img src="assets/images/f02.jpg" alt="Perfume 2">
+                        <div class="overlay">
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+                    <h3>Ocean Breeze</h3>
+                    <p class="price">Rs. 9,299</p>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="image-box">
+                        <img src="assets/images/f03.jpg" alt="Perfume 3">
+                        <div class="overlay">
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+                    <h3>Golden Amber</h3>
+                    <p class="price">Rs. 6,000</p>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="image-box">
+                        <img src="assets/images/f04.jpg" alt="Perfume 4">
+                        <div class="overlay">
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+                    <h3>Velvet Rose</h3>
+                    <p class="price">Rs. 4,800</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            
+            <!-- Column 1: Quick Links -->
+            <div class="footer-col">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 2: Contact Info -->
+            <div class="footer-col contact-col">
+                <h3 class="footer-heading">Contact</h3>
+                <address>
+                    <p class="address-text">KETCHERY BAZAR ,FAISALABAD ,<br> PUNJAB</p>
+                    <p class="email-text"><a href="mailto:sales@scentaura.com">SALES@SCENTAURA.COM</a></p>
+                    <p class="phone-text"><a href="tel:+923451145557">+92-345-1145557</a></p>
+                </address>
+            </div>
+        </div>
+
+        <!-- Bottom Copyright Bar -->
+        <div class="footer-bottom">
+            <p>
+                &copy; 2025 ScentAura. All Rights Reserved. &nbsp;|&nbsp; 
+                <a href="#">Privacy Policy</a> &nbsp;|&nbsp; 
+                <a href="#">Terms & Conditions</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- OFF CANVAS MENU STRUCTURE -->
+    
+    <!-- Button to Open Menu -->
+    <div class="canvas_open">
+        <a href="javascript:void(0)"><i class="fa-solid fa-bars"></i></a>
+    </div>
+
+    <!-- Overlay -->
+    <div class="off_canvas_overlay"></div>
+
+    <!-- The Menu Itself -->
     <div class="offcanvas_menu_wrapper">
         <div class="canvas_close">
-            <a href="javascript::void(0)"><i class="fa fa - times"> </i></a>
+            <a href="javascript:void(0)"><i class="fa-solid fa-xmark"></i></a>
         </div>
+
+
+        
         <div class="header_account">
             <ul>
-                <list class="language"><a href="#"></a></list>
+                <li class="top_links">
+                    <a href="#" class="account_trigger">
+                        My Account <i class="fa-solid fa-angle-down"></i> 
+                    </a>
+                    <!-- This UL is hidden by default and appears on hover -->
+                    <ul class="dropdown_links">
+                        <li><a href="#">Checkout</a></li>
+                        <li><a href="#">My Cart</a></li>
+                        <li><a href="#">Account Details</a></li>
+                        <li><a href="#">Wishlist</a></li>
+                    </ul>
+                </li>
             </ul>
-            <li class="top links">
-                <a href="#">My Account <i class="fa fa-angle-down"></i> </a>
-                <ul class="dropdown_links">
-                    <li><a href="#">Checkout</a></li>
-                    <li><a href="#">My Cart</a></li>
-                    <li><a href="#">Account</a></li>
-                    <li><a href="#">Wishlist</a></li>
-
-
-                </ul>
-
-
-            </li>
         </div>
 
         <div class="header_right_info">
             <ul>
-                <li class="search box">
-                    <a href="javascript::void(0)"><i class="fa fa search"></i></a>
+                <!-- Search Box inside Mobile Menu -->
+                <li class="search_box">
                     <div class="search_widget">
                         <form action="#">
                             <input type="text" placeholder="Search Your Perfume">
-                            <button type="Submit"><i class="fa fa-search"></i></button>
+                            <button type="Submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                         </form>
                     </div>
                 </li>
-                <li class="mini_cart_wrapper">
-                    <a href="javascript::void(0)">
-                        <i class="fa fa-shopping-cart"></i>
-                        <span class="item_count"></span>
 
-                    </a>
-                    <div class="mini_cart mini_cart2">
+                <!-- Mini Cart Preview -->
+                <li class="mini_cart_wrapper mt-3">
+                    <div class="mini_cart">
                         <div class="cart_gallery">
                             <div class="cart_item">
-                                <div class="cart_img">
-                                    <a href="#"><img src="assets/images/p02.jpg" alt="Perfume"></a>
-                                </div>
-
                                 <div class="cart_info">
                                     <a href="#">Hugo Boss</a>
-                                    <p><span>Rs. 36460</span></p>
+                                    <p><span>Rs. 6,000 x 1</span></p>
                                 </div>
-
                                 <div class="cart_remove">
-                                    <a href="#"><i class="fa fa-times"></i></a>
+                                    <a href="#"><i class="fa-solid fa-xmark"></i></a>
                                 </div>
                             </div>
-
-                            <div class="cart_item">
-                                <div class="cart_img">
-                                    <a href="#">
-                                        <img src="assets/images//p01.jpg" alt="Perfume">
-                                    </a>
-                                </div>
-
-                                <div class="cart_info">
-                                    <a href="#">Bvlgari</a>
-                                    <p><span>Rs. 8350</span> × 1</p>
-                                </div>
-
-                                <div class="cart_remove">
-                                    <a href="#">
-                                        <i class="fa fa-times"></i>
-                                    </a>
-                                </div>
-                            </div>
-
                         </div>
-                    </div>
 
-                    <div class="mini_cart_table p-5">
-
-                        <div class="cart_table_border">
-
-                            <!-- Sub Total -->
-                            <div class="cart_total flex justify-between items-center text-gray-600">
+                        <div class="mini_cart_table">
+                            <div class="cart_total">
                                 <span>Sub Total :</span>
-                                <span class="price font-medium text-gray-800">Rs. 11990</span>
+                                <span class="price">Rs. 6,000</span>
                             </div>
-
                         </div>
 
-                        <!-- Total (with mt-10 translated to mt-4 for better spacing) -->
-                        <div class="cart_total mt-4 flex justify-between items-center font-bold text-lg text-gray-900">
-                            <span>Total :</span>
-                            <span class="price text-indigo-600">Rs. 11990</span>
+                        <div class="mini_cart_footer">
+                            <div class="cart_button">
+                                <a href="#">View Cart</a>
+                            </div>
+                            <div class="cart_button">
+                                <a href="#">Checkout</a>
+                            </div>
                         </div>
-
                     </div>
-
-                    <!-- Mini Cart Footer (Based on the provided image) -->
-                    <div class="mini_cart_footer p-5 pt-0 flex flex-col space-y-3">
-
-                        <!-- View Cart Button -->
-                        <div class="cart_button">
-                            <a href="#"
-                                class="block w-full text-center py-3 px-4 bg-gray-100 text-gray-700 font-semibold rounded-lg hover:bg-gray-200 transition duration-150 shadow-sm">
-                                View Cart
-                            </a>
-                        </div>
-
-                        <!-- Checkout Button -->
-                        <div class="cart_button">
-                            <a href="#"
-                                class="block w-full text-center py-3 px-4 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition duration-150">
-                                Checkout
-                            </a>
-                        </div>
-
-                    </div>
-
-
-
-
                 </li>
             </ul>
         </div>
 
         <div id="mood-menu" class="mood-menu-container">
-        
-        <ul class="main-mood-list">
-            
-            <!-- Main category item: "Shop by Mood" -->
-            <li class="menu-item-has-children active">
-                
-                <!-- Main Link -->
-                <a href="#" class="main-menu-link main-menu-link-active">
-                    Shop by Mood
-                </a>
-                
-                <!-- Sub-menu containing the 5 moods -->
-                <ul class="sub-mood-list">
-                    <!-- Mood 1 -->
-                    <li>
-                        <a href="#" class="sub-mood-list-item-link">Happy</a>
-                    </li>
-                    <!-- Mood 2 -->
-                    <li>
-                        <a href="#" class="sub-mood-list-item-link">Relaxed</a>
-                    </li>
-                    <!-- Mood 3 -->
-                    <li>
-                        <a href="#" class="sub-mood-list-item-link">Energetic</a>
-                    </li>
-                    <!-- Mood 4 -->
-                    <li>
-                        <a href="#" class="sub-mood-list-item-link">Thoughtful</a>
-                    </li>
-                    <!-- Mood 5 -->
-                    <li>
-                        <a href="#" class="sub-mood-list-item-link">Mysterious</a>
-                    </li>
-                </ul>
-            </li>
-            
-            <!-- Add a dummy sibling main item for context -->
-            <li>
-                <a href="#" class="main-menu-link main-menu-link-sibling">
-                    Trending
-                </a>
-            </li>
-            <li class = "menu-children">
-                <a href="#">My Account</a>
-            
-            </li>
-            <li class = "menu-children">
-                <a href="#">About Us</a>
-            
-            </li>
-            <li class = "menu-children">
-                <a href="#">User</a>
-                <ul class = "sub-menu">
-                    <li><a href="#">Login In</a></li>
-                    <li><a href="#">Sign Up</a></li>
-                </ul>
-            
-            </li>
-            
-            
-            
-        </ul>
-    </div>
+            <ul class="main-mood-list">
+                <li class="menu-item-has-children active">
+                    <a href="#" class="main-menu-link">Shop by Mood</a>
+                    <ul class="sub-mood-list">
+                        <li><a href="#" class="sub-mood-list-item-link">Happy</a></li>
+                        <li><a href="#" class="sub-mood-list-item-link">Relaxed</a></li>
+                        <li><a href="#" class="sub-mood-list-item-link">Energetic</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="main-menu-link">Trending</a></li>
+                <li><a href="#" class="main-menu-link">About Us</a></li>
+                <li><a href="#" class="main-menu-link">Login / Sign Up</a></li>
+            </ul>
+        </div>
     </div>
 
+    <!-- JS Scripts -->
+    <script src="menu_toggle.js" defer></script>
 </body>
-
 </html>
