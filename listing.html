@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Emotions - Scent Aura</title>
+
+    <!-- Bootstrap & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR (Identical to Homepage) -->
+    <nav class="header_bottom">
+        <div class="main_menu_nav">
+            <div class="site_branding">
+                <h1><a href="index.html">Scent Aura</a></h1>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li class="has-dropdown">
+                    <a href="#">Mood-based Categories <i class="fa-solid fa-angle-down text-xs ml-1"></i></a>
+                    <ul class="sub_menu">
+                        <li><a href="#">Happy</a></li>
+                        <li><a href="#">Relaxed</a></li>
+                        <li><a href="#">Trending</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Cart</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <ul class="nav-icons-container">
+                <li class="search-toggle"><a href="javascript:void(0)" id="search-icon"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                <li class="user-profile"><a href="signup.html"><i class="fa-solid fa-user"></i></a></li>
+                <li class="cart-icon">
+                    <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i> <span id="cart-count" class="badge">0</span></a>
+                </li>
+            </ul>
+        </div>
+        <!-- Search Bar -->
+        <div class="search-bar-container" id="search-bar">
+            <div class="search-form-wrapper">
+                <form onsubmit="return false;">
+                    <input type="text" placeholder="Search..." aria-label="Search">
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- LISTING HERO SECTION -->
+    <div class="listing-hero">
+        <div class="hero-content">
+            <h2>Choose with Emotions</h2>
+        </div>
+    </div>
+
+    <!-- PRODUCT CATALOG -->
+    <section class="catalog-section">
+        <div class="container-fluid"> <!-- Fluid for wider Dior-like look -->
+            
+            <div class="catalog-grid">
+                
+                <!-- Product 1: Bold -->
+                <div class="catalog-card">
+                    <div class="cat-image-box">
+                        <img src="assets/images/p01.jpg" alt="Citrus Splash">
+                        <span class="mood-tag happy">Bold</span>
+                    </div>
+                    <div class="cat-details">
+                        <h3>Citrus Splash</h3>
+                        <p class="cat-price">Rs. 4,500</p>
+                        <p class="stock-status in-stock">In Stock</p>
+                        <button class="add-to-cart-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 2: Bold -->
+                <div class="catalog-card">
+                    <div class="cat-image-box">
+                        <a href="product_detail.html">
+                            <img src="assets/images/p02.jpg" alt="Midnight Oud">
+                        </a>
+                        
+                        <span class="mood-tag bold">Bold</span>
+                    </div>
+                    <div class="cat-details">
+                        <h3>Midnight Oud</h3>
+                        <p class="cat-price">Rs. 8,200</p>
+                        <p class="stock-status in-stock">In Stock</p>
+                        <button class="add-to-cart-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 3: Romantic -->
+                <div class="catalog-card">
+                    <div class="cat-image-box">
+                        <img src="assets/images/p03.jpg" alt="Velvet Rose">
+                        <span class="mood-tag romantic">Romantic</span>
+                    </div>
+                    <div class="cat-details">
+                        <h3>Velvet Rose</h3>
+                        <p class="cat-price">Rs. 5,600</p>
+                        <p class="stock-status in-stock">In Stock</p>
+                        <button class="add-to-cart-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 4: Energetic -->
+                <div class="catalog-card">
+                    <div class="cat-image-box">
+                        <img src="assets/images/p04.jpg" alt="Ocean Rush">
+                        <span class="mood-tag energetic">Romantic</span>
+                    </div>
+                    <div class="cat-details">
+                        <h3>Ocean Rush</h3>
+                        <p class="cat-price">Rs. 4,200</p>
+                        <p class="stock-status out-stock">Out of Stock</p>
+                        <button class="add-to-cart-btn disabled" disabled>Sold Out</button>
+                    </div>
+                </div>
+
+                <!-- Product 5: Happy -->
+                <div class="catalog-card">
+                    <div class="cat-image-box">
+                        <img src="assets/images/p05.jpg" alt="Sunny Day">
+                        <span class="mood-tag happy">Happy</span>
+                    </div>
+                    <div class="cat-details">
+                        <h3>Sunny Day</h3>
+                        <p class="cat-price">Rs. 3,800</p>
+                        <p class="stock-status in-stock">In Stock</p>
+                        <button class="add-to-cart-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 6: Bold -->
+                <div class="catalog-card">
+                    <div class="cat-image-box">
+                        <img src="assets/images/p06.jpg" alt="Leather & Smoke">
+                        <span class="mood-tag bold">Bold</span>
+                    </div>
+                    <div class="cat-details">
+                        <h3>Leather & Smoke</h3>
+                        <p class="cat-price">Rs. 9,500</p>
+                        <p class="stock-status in-stock">In Stock</p>
+                        <button class="add-to-cart-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 7: Energetic -->
+                <div class="catalog-card">
+                    <div class="cat-image-box">
+                        <img src="assets/images/p07.jpg" alt="Vanilla Kiss">
+                        <span class="mood-tag romantic">Energetic</span>
+                    </div>
+                    <div class="cat-details">
+                        <h3>Vanilla Kiss</h3>
+                        <p class="cat-price">Rs. 5,000</p>
+                        <p class="stock-status in-stock">In Stock</p>
+                        <button class="add-to-cart-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 8: Energetic -->
+                <div class="catalog-card">
+                    <div class="cat-image-box">
+                        <img src="assets/images/p08.jpg" alt="Spicy Ginger">
+                        <span class="mood-tag energetic">Energetic</span>
+                    </div>
+                    <div class="cat-details">
+                        <h3>Spicy Ginger</h3>
+                        <p class="cat-price">Rs. 4,900</p>
+                        <p class="stock-status in-stock">In Stock</p>
+                        <button class="add-to-cart-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- OFF CANVAS MENU (Required for mobile nav) -->
+    <div class="canvas_open"><a href="javascript:void(0)"><i class="fa-solid fa-bars"></i></a></div>
+    <div class="off_canvas_overlay"></div>
+    <div class="offcanvas_menu_wrapper">
+        <div class="canvas_close"><a href="javascript:void(0)"><i class="fa-solid fa-xmark"></i></a></div>
+        <div class="header_account">
+            <ul>
+                <li class="top_links">
+                    <a href="#" class="account_trigger">My Account <i class="fa-solid fa-angle-down"></i></a>
+                    <ul class="dropdown_links">
+                        <li><a href="signup.html">Login/Sign Up</a></li>
+                        <li><a href="#">Checkout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- (Rest of menu similar to index.html) -->
+    </div>
+
+    <!-- FOOTER (Same as homepage) -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="listing.html">Shop</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col contact-col">
+                <h3 class="footer-heading">Contact</h3>
+                <address>
+                    <p class="address-text">Ketchery Bazar, Faisalabad</p>
+                    <p class="phone-text">+92-345-1145557</p>
+                </address>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2025 ScentAura.</p></div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="menu_toggle.js"></script> <!-- Reusing your menu script -->
+    <script src="listing.js"></script> <!-- New script for this page -->
+</body>
+</html>
