@@ -1,0 +1,696 @@
+ /* --- Global & Reset --- */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f7f9fb;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- Navigation Bar --- */
+.header_bottom {
+    background-color: #00d79a;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 0.75rem 0;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* High index to stay on top */
+}
+
+.main_menu_nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Branding */
+.site_branding h1 a {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1;
+}
+
+/* Main Menu Links (Desktop) */
+.main_menu_nav > ul {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.main_menu_nav > ul > li {
+    position: relative;
+}
+
+.main_menu_nav > ul > li > a {
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+    padding: 10px;
+}
+
+.main_menu_nav > ul > li:hover > a {
+    color: #2b3a55; /* Darker accent on hover */
+}
+
+/* Desktop Dropdown */
+.sub_menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 180px;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    border-radius: 4px;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.has-dropdown:hover .sub_menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sub_menu li a {
+    color: #4b5563 !important; /* Override white text */
+    display: block;
+    padding: 8px 15px;
+    text-transform: capitalize;
+}
+
+.sub_menu li a:hover {
+    background-color: #f3f4f6;
+    color: #00d79a !important;
+}
+
+/* Utility Icons */
+.nav-icons-container {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-icons-container a {
+    color: white;
+    font-size: 1.2rem;
+    transition: transform 0.2s;
+}
+
+.nav-icons-container a:hover {
+    transform: scale(1.1);
+}
+
+/* --- Search Bar Toggle --- */
+.search-bar-container {
+    width: 100%;
+    background-color: #00bf88; /* Slightly darker shade */
+    max-height: 0; /* Hidden by default */
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    position: absolute;
+    top: 100%; /* Directly below header */
+    left: 0;
+    z-index: 999;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Fixed missing syntax */
+}
+
+/* This class is added by JS to show the bar */
+.search-bar-container.active {
+    max-height: 100px;
+    padding: 1rem 0;
+}
+
+.search-form-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.search-form-wrapper form {
+    display: flex;
+    gap: 10px;
+}
+
+.search-form-wrapper input[type="text"] {
+    flex-grow: 1;
+    padding: 0.7rem 1rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.search-form-wrapper button {
+    background-color: #2b3a55;
+    color: white;
+    padding: 0 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+/* --- Image Slider --- */
+.image-slider {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: 600px; /* Adjust height as needed */
+    overflow: hidden;
+    background-color: #000;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none; /* Prevent clicking hidden slides */
+}
+
+.slide.active {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: brightness(0.7); /* Darken image slightly so text pops */
+}
+
+.slide-content {
+    text-align: center;
+    color: white;
+    z-index: 2;
+    padding: 20px;
+    animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-text {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+.shop-now-button {
+    background-color: #00d79a;
+    color: white;
+    padding: 12px 35px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: background 0.3s;
+}
+
+.shop-now-button:hover {
+    background-color: #00bf88;
+}
+
+/* Slider Arrows */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-arrow:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.arrow-left { left: 20px; }
+.arrow-right { right: 20px; }
+
+/* --- Off-Canvas Menu --- */
+.offcanvas_menu_wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background: white;
+    z-index: 9999;
+    padding: 20px;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    transform: translateX(100%); /* Hidden by default */
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto;
+}
+
+/* Open State */
+body.canvas_active .offcanvas_menu_wrapper {
+    transform: translateX(0);
+}
+
+/* Overlay */
+.off_canvas_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 9990;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+body.canvas_active .off_canvas_overlay {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Buttons */
+.canvas_open {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 2000;
+}
+
+.canvas_open a {
+    background: #2b3a55;
+    color: white;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.canvas_close {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.canvas_close a {
+    color: #333;
+    font-size: 1.5rem;
+}
+
+/* Mobile Menu Links */
+.main-mood-list {
+    margin-top: 20px;
+}
+
+.main-menu-link {
+    display: block;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    font-weight: 600;
+    color: #333;
+}
+
+.sub-mood-list {
+    background: #f9f9f9;
+    padding-left: 15px;
+}
+
+.sub-mood-list-item-link {
+    display: block;
+    padding: 8px 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Mini Cart in Mobile Menu */
+.mini_cart {
+    background: #f3f4f6;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.cart_item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.cart_total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    margin: 15px 0;
+}
+
+.mini_cart_footer {
+    display: flex;
+    gap: 10px;
+}
+
+.cart_button a {
+    display: block;
+    background: #2b3a55;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.cart_button:first-child a {
+    background: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+
+/* --- ACCOUNT DROPDOWN (OFF-CANVAS) --- */
+
+/* 1. Style the main "My Account" link */
+.header_account .top_links {
+    list-style: none;
+    cursor: pointer;
+}
+
+.header_account .account_trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    padding: 10px 0;
+    color: #2b3a55;
+    transition: color 0.3s;
+}
+
+/* 2. Style the dropdown list (Hidden by default) */
+.header_account .dropdown_links {
+    list-style: none;
+    padding-left: 15px;      /* Indent the links so they look like children */
+    background-color: #f9f9f9;
+    border-left: 2px solid #00d79a; /* Green line on the left for style */
+    
+    /* Animation Properties */
+    max-height: 0;           /* Height is 0 so it is hidden */
+    opacity: 0;              /* Invisible */
+    overflow: hidden;        /* Hides content that spills out */
+    visibility: hidden;      /* Prevents clicking when hidden */
+    transition: all 0.4s ease-in-out; /* Smooth slide effect */
+}
+
+.header_account .dropdown_links li a {
+    display: block;
+    padding: 8px 0;
+    font-size: 0.9rem;
+    color: #555;
+    text-decoration: none;
+}
+
+.header_account .dropdown_links li a:hover {
+    color: #00d79a;
+}
+
+/* --- THE HOVER LOGIC --- */
+
+/* 3. When you hover over .top_links, change .dropdown_links */
+.header_account .top_links:hover .dropdown_links {
+    max-height: 200px;       /* Allow it to expand (enough height for items) */
+    opacity: 1;              /* Make visible */
+    visibility: visible;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/* Optional: Rotate the arrow icon when hovering */
+.header_account .top_links:hover .account_trigger i {
+    transform: rotate(180deg);
+    transition: transform 0.3s;
+}
+
+
+/* --- FEATURED PRODUCTS SECTION --- */
+.featured-section {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+/* Heading with Cinzel Decorative Font */
+.featured-heading {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 2.5rem;
+    color: #1f2937;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+/* Grid Layout for 4 items */
+.product-grid {
+    display: grid;
+    /* This creates 4 equal columns on large screens, wraps automatically on smaller ones */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-card {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Subtle lift effect */
+}
+
+/* Image styling to ensure square shape */
+.image-box {
+    position: relative;
+    width: 100%;
+    /* Aspect Ratio 1/1 forces a perfect square */
+    aspect-ratio: 1 / 1; 
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the square without stretching */
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .image-box img {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.product-card h3 {
+    font-family: 'Cinzel Decorative', cursive; /* Optional: Matches header */
+    font-size: 1.2rem;
+    margin: 10px 0 5px 0;
+    color: #333;
+    font-weight: 700;
+}
+
+.product-card .price {
+    font-family: 'Inter', sans-serif;
+    color: #00d79a; /* Brand Green */
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Optional Overlay Button */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: rgba(255,255,255,0.9);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .overlay {
+    transform: translateY(0);
+}
+
+.overlay button {
+    background: #1f2937;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+/* --- FOOTER SECTION --- */
+.site-footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding-top: 60px;
+    margin-top: 50px;
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Pushes content to left and right edges */
+    padding: 0 20px 40px 20px;
+    flex-wrap: wrap; /* Allows wrapping on mobile */
+    gap: 40px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Align the contact column to the right to match reference image */
+.contact-col {
+    text-align: right; 
+}
+
+/* Headings in Footer */
+.footer-heading {
+    font-family: 'Cinzel Decorative', cursive; /* Matches reference image style */
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Quick Links Styling */
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600; /* Bold text like reference */
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: #00d79a;
+}
+
+/* Contact Details Styling */
+.site-footer address {
+    font-style: normal;
+    font-family: "Poppins", serif; /* Using serif to match image feel */
+    line-height: 1.8;
+    font-weight: 700;
+}
+
+.address-text {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.email-text, .phone-text {
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.site-footer address a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/* Footer Bottom Bar */
+.footer-bottom {
+    border-top: 1px solid #333; /* Subtle divider */
+    padding: 20px;
+    text-align: center;
+    font-family: 'Inter', sans-serif; /* Clean font for legal text */
+    font-size: 0.85rem;
+    color: #cccccc;
+}
+
+.footer-bottom a {
+    color: #cccccc;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-bottom a:hover {
+    color: white;
+}
+
+/* Responsive adjustments for Footer */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contact-col {
+        text-align: center; /* Center align on mobile */
+    }
+}
