@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - Scent Aura</title>
+    
+    <!-- Using the same fonts and icons as homepage for consistency -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Linking the main stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="signup-page">
+
+    <!-- Background Image Wrapper (This will be blurred) -->
+    <div class="signup-bg-image"></div>
+
+    <!-- The Content Wrapper (This sits on top, clear and sharp) -->
+    <div class="signup-wrapper">
+        <div class="signup-card">
+            <div class="form-header">
+                <h2>Join Scent Aura</h2>
+                <p>Unlock exclusive scents and offers</p>
+            </div>
+
+            <form id="signupForm">
+                <!-- Username -->
+                <div class="input-group">
+                    <label for="username"><i class="fa-solid fa-user"></i></label>
+                    <input type="text" id="username" placeholder="Username" required>
+                </div>
+
+                <!-- Email -->
+                <div class="input-group">
+                    <label for="email"><i class="fa-solid fa-envelope"></i></label>
+                    <input type="email" id="email" placeholder="Email Address" required>
+                </div>
+
+                <!-- Password -->
+                <div class="input-group">
+                    <label for="password"><i class="fa-solid fa-lock"></i></label>
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+
+                <!-- Create Button -->
+                <button type="submit" class="signup-btn">Create Account</button>
+            </form>
+
+            <div class="form-footer">
+                <p>Already have an account? <a href="#">Log In</a></p>
+                <p><a href="index.html">Back to Home</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="signup.js"></script>
+</body>
+</html>
