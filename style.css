@@ -1695,3 +1695,157 @@ body.canvas_active .off_canvas_overlay {
     text-transform: uppercase; 
     letter-spacing: 1px; 
     font-weight: 700; }
+
+    /* --- CONTACT PAGE STYLES --- */
+
+/* The Background Section */
+.contact-page-section {
+    background-color: #aac0c0; /* Muted Teal/Grey to match image */
+    padding: 60px 20px;
+    min-height: 80vh; /* Ensures it looks good on large screens */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* The Grid/Flex Container */
+.contact-split-layout {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    gap: 50px;
+    align-items: flex-start; /* Aligns top */
+}
+
+/* LEFT SIDE: Info */
+.contact-info-side {
+    flex: 1;
+    padding-top: 40px; /* Aligns visually with form */
+}
+
+.contact-main-heading {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 3.5rem;
+    color: #000000;
+    margin-bottom: 50px;
+    line-height: 1;
+}
+
+.contact-details-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact-item i {
+    font-size: 1.8rem;
+    color: #000;
+    width: 30px; /* Fixed width for alignment */
+}
+
+.contact-item .detail-line {
+    border-bottom: 2px solid #000; /* The underline style from image */
+    padding-bottom: 5px;
+    flex-grow: 1; /* Extends line */
+    max-width: 300px;
+}
+
+.contact-item a {
+    font-family: 'Cinzel Decorative', cursive;
+    font-weight: 700;
+    color: #000;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+/* RIGHT SIDE: Form */
+.contact-form-side {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.contact-form-side form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form-side label {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 0.85rem;
+    color: #666;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.contact-form-side input, 
+.contact-form-side textarea {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    outline: none;
+    background-color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+.contact-form-side input:focus,
+.contact-form-side textarea:focus {
+    border-color: #000;
+}
+
+.contact-submit-btn {
+    background-color: #1f1f1f; /* Black button */
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 10px;
+}
+
+.contact-submit-btn:hover {
+    background-color: #333;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .contact-split-layout {
+        flex-direction: column;
+    }
+    
+    .contact-info-side {
+        padding-top: 0;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .contact-main-heading {
+        font-size: 2.5rem;
+    }
+
+    .contact-details-list {
+        align-items: center; /* Center items on mobile */
+    }
+
+    .contact-item .detail-line {
+        width: 100%;
+    }
+}
